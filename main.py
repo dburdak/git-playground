@@ -58,4 +58,7 @@ while not is_game_over():
         print(f"That's right! {WORDS_TO_WIN - guessed} to go")
     else:
         errors += 1
-        print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
+        if errors==3:
+            print("Sorry you have no lives, you lost")
+        else:
+            print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
