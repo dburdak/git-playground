@@ -40,10 +40,12 @@ word = words[random.randrange(0, len(words))]
 print(f"Can you make up {WORDS_TO_WIN} words from letters in word provided by me?")
 print(f"Your word is '{word}'")
 
-
+already=[]
 while not is_game_over():
     guess = input("Your next take: ")
-
+    while guess in already:
+        guess = input("This word already entered, try another: ")
+    already.append(guess)
     if not guess_is_valid(guess):
         continue
 
